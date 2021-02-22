@@ -1,0 +1,40 @@
+@import "./scss/mixins";
+@import "./scss/fonts";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  @include base-font();
+  @include flex-column(flex-start, center);
+}
+
+#root {
+  width: 100%;
+}

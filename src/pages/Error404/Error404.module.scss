@@ -1,0 +1,8 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.root {
+  @include flex-row(center, center);
+  width: 100vw;
+  height: 100vh;
+}

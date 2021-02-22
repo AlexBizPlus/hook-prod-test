@@ -1,0 +1,255 @@
+@mixin base-font($weight: 400) {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: $weight;
+}
+
+@mixin flex-column($main-axis, $second-axis) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $main-axis;
+  align-items: $second-axis;
+}
+
+@mixin flex-row($main-axis, $second-axis) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $main-axis;
+  align-items: $second-axis;
+}
+
+@mixin list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin pseudo {
+  content: "";
+  position: absolute;
+}
+
+@mixin visually-hidden-mixin {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@mixin title-h1 {
+  font-family: "Mukta", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+@mixin title-h2 {
+  font-family: "Mukta", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin title-h3 {
+  font-family: "Mukta", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 36px;
+}
+
+@mixin title-h4 {
+  font-family: "Mukta", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 36px;
+}
+
+@mixin text-T1-18-regular {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+@mixin text-T1-16-regular {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@mixin text-T1-16-medium {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@mixin text-T1-16-bold {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@mixin text-T1-14-medium {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+@mixin text-T1-14-bold {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin text-T1-14-semibold {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin text-T1-13-medium {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+@mixin text-T1-12-medium {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin text-T1-12-bold {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin text-T1-10-bold {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+@mixin text-T1-10-medium {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+@mixin text-T1-8-bold {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 8px;
+  line-height: 10px;
+}
+
+@mixin text-T1-8-medium {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 8px;
+  line-height: 10px;
+}
+
+@mixin text-button-normal {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin text-button-small {
+  font-family: "NotoSans", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+@mixin text-T2-14-light {
+  font-family: "OpenSans", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+@mixin text-T2-14-regular {
+  font-family: "OpenSans", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+@mixin text-T2-14-semibold {
+  font-family: "OpenSans", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+@mixin text-T2-14-bold {
+  font-family: "OpenSans", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+@mixin text-T2-12-light {
+  font-family: "OpenSans", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin text-T2-12-regular {
+  font-family: "OpenSans", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin text-T2-12-semibold {
+  font-family: "OpenSans", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin text-T2-12-bold {
+  font-family: "OpenSans", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin text-details-10-semibold {
+  font-family: "OpenSans", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+}
+
+@mixin text-details-10-light {
+  font-family: "OpenSans", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 14px;
+}

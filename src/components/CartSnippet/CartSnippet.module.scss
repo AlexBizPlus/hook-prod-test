@@ -1,0 +1,150 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.root {
+  @include flex-row(space-between, center);
+  min-width: $small_width;
+  width: 100%;
+  max-width: $width;
+  height: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 3px;
+  padding-right: 8px;
+  background-color: $white;
+  border: 1px solid $shadow;
+  border-radius: 8px;
+}
+
+.wrapper {
+  @include flex-row(flex-start, center);
+}
+
+.img {
+  width: 44px;
+  height: auto;
+  margin-right: 7px;
+}
+
+.middle_block {
+  @include flex-column(space-between, flex-start);
+  min-width: 120px;
+  max-width: 160px;
+  height: 90px;
+}
+
+.count_actions {
+  @include flex-row(space-between, center);
+  width: 90px;
+  max-width: 90px;
+  margin-left: 3px;
+}
+
+.basket_container {
+  @include flex-row(center, center);
+  position: relative;
+  width: 28px;
+  height: 28px;
+  background-color: $background_state;
+  border-radius: 50%;
+}
+
+.basket {
+  width: 12px;
+  height: 14px;
+}
+
+.count {
+  @include text-T1-12-medium;
+  margin-left: 2px;
+  margin-right: 2px;
+  color: $midnight_100;
+}
+
+.increase_count {
+  position: relative;
+  width: 28px;
+  height: 28px;
+  background-color: $yellow_100;
+  border-radius: 50%;
+
+  &::before {
+    @include pseudo;
+    top: calc(50% - 7px);
+    left: calc(50% - 1px);
+    width: 1px;
+    height: 14px;
+    border: 1px solid $white;
+    border-radius: 3px;
+    background-color: $white;
+  }
+
+  &::after {
+    @include pseudo;
+    top: calc(50% - 1px);
+    left: calc(50% - 6px);
+    width: 13px;
+    height: 1px;
+    border: 1px solid $white;
+    border-radius: 3px;
+    background-color: $white;
+  }
+}
+
+.name {
+  @include text-T1-12-medium;
+  min-width: 120px;
+  margin-top: 12px;
+  margin-bottom: 0;
+  color: $midnight_100;
+}
+
+.name_line {
+  width: 160px;
+}
+
+.price_wrapper {
+  @include flex-row(space-between, center);
+  width: 100%;
+  margin-bottom: 13px;
+}
+
+.total_price {
+  @include text-T1-12-bold;
+  color: $midnight_100;
+}
+
+.price {
+  @include text-T2-12-regular;
+  position: relative;
+  color: $midnight_50;
+  padding-left: 4px;
+
+  &::before {
+    position: absolute;
+    content: "·";
+    top: 0;
+    left: 0;
+  }
+}
+
+.special_offer {
+  @include text-T1-8-medium;
+  @include flex-row(flex-start, center);
+  height: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: $yellow_25;
+  border-radius: 3px;
+  color: $midnight_100;
+}
+
+.link {
+  @include text-T1-14-bold;
+  margin-left: auto;
+  color: $yellow_100;
+}
+
+.hidden {
+  display: none;
+}

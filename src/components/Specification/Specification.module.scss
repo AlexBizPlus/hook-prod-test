@@ -1,0 +1,182 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.root {
+  width: 100%;
+  @include flex-column(flex-start, center);
+  padding-bottom: 60px;
+}
+
+.wrapper {
+  @include flex-column(flex-start, flex-start);
+  min-width: $core_width;
+  width: calc(100% - 48px);
+  max-width: $max_width - ($width - $core_width);
+  min-height: 300px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: $white;
+  border-radius: 8px;
+}
+
+.caption {
+  @include text-T1-16-bold;
+  margin-top: 14px;
+  margin-bottom: 0;
+  color: $midnight_100;
+}
+
+.nutrition_list {
+  position: relative;
+  @include text-T2-12-regular;
+  margin-top: 17px;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-bottom: 21px;
+  list-style-position: inside;
+  color: $midnight_50;
+
+  li {
+    padding-bottom: 6px;
+  }
+}
+
+.text {
+  @include text-T2-12-light;
+  color: $midnight_100;
+
+  p {
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+}
+
+.nutrition_table {
+  @include list-reset;
+  @include flex-row(flex-start, flex-start);
+  position: relative;
+  width: 100%;
+  margin-top: 4px;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+
+  &::after {
+    @include pseudo;
+    top: 0;
+    left: calc(50% - (#{$core_width} / 2) + 15px);
+    width: $core_width - 30px;
+    height: 1px;
+    background-color: $smoke;
+  }
+}
+
+.nutrition_table_item {
+  @include flex-column(flex-start, center);
+  width: ($core_width - 30px) / 4;
+  margin-top: 13px;
+}
+
+.table_item_value {
+  @include text-T1-18-regular;
+  color: $midnight_100;
+}
+
+.table_item_variable {
+  @include text-T2-12-regular;
+  margin-top: 2px;
+  color: $midnight_50;
+}
+
+.table_item_bottom_wrapper {
+  @include flex-row(center, flex-start);
+  margin-top: 6px;
+}
+
+.table_item_bottom {
+  @include text-details-10-semibold;
+  min-height: 14px;
+  padding-left: 4px;
+  padding-right: 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table_item_RI {
+  min-width: 41px;
+  background-color: $midnight_10;
+  color: $midnight_70;
+}
+
+.table_item_misc {
+  min-width: 32px;
+  background-color: $success_10;
+  color: $success_100;
+}
+
+.nutrition_table_item_value {
+  @include text-T1-14-medium;
+}
+
+.hide_button {
+  @include text-T1-14-bold;
+  @include flex-row(center, center);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 17px;
+  padding-bottom: 17px;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: $yellow_100;
+
+  span {
+    margin-right: 10px;
+  }
+
+  &::after {
+    @include pseudo;
+    bottom: 0;
+    left: calc(50% - (#{$core_width} / 2) + 15px);
+    width: $core_width - 30px;
+    height: 1px;
+    background-color: $smoke;
+  }
+}
+
+.hide_button_arrow {
+  transform-origin: center;
+}
+
+.bottom_line {
+  position: relative;
+  padding-bottom: 17px;
+
+  &::after {
+    @include pseudo;
+    bottom: 0;
+    left: calc(50% - (#{$core_width} / 2) + 15px);
+    width: $core_width - 30px;
+    height: 1px;
+    background-color: $smoke;
+  }
+}
+
+.other_table {
+  @include text-T2-12-regular;
+  border-collapse: separate;
+  border-spacing: 0 14px;
+  margin-top: 4px;
+  width: 100%;
+}
+
+.other_table_key {
+  text-align: start;
+  color: $black_60;
+}
+
+.other_table_value {
+  text-align: end;
+  color: $midnight_100;
+}

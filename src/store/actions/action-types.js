@@ -1,0 +1,12 @@
+export const PRODUCT = `PRODUCT`;
+export const FAVORITE_PRODUCT = `FAVORITE_PRODUCT`;
+export const RELATED = `RELATED`;
+export const FAVORITE_RELATED = `FAVORITE_RELATED`;
+export const CART = `CART`;
+export const CART_PRODUCTS = `CART_PRODUCTS`;
+export const REDUCE_COUNT_CART = `REDUCE_COUNT_CART`;
+export const INCREASE_COUNT_CART = `INCREASE_COUNT_CART`;
+export const CART_ORDER = `CART_ORDER`;
+export const CART_DELIVERY = `CART_DELIVERY`;
+export const CART_PROMOCODE = `CART_PROMOCODE`;
+export const CART_TOTAL = `CART_TOTAL`;

@@ -1,0 +1,7 @@
+@import "../../scss/variables";
+
+.root {
+  background-color: $background_page;
+  height: 100vh;
+  overflow-y: auto;
+}

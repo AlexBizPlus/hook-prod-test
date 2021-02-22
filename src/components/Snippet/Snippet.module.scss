@@ -1,0 +1,204 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.root {
+  @include flex-column(flex-start, center);
+  position: relative;
+  width: 152px;
+  min-height: 228px;
+  padding-left: 12px;
+  padding-right: 9px;
+  background-color: $white;
+  border: 1px solid $shadow;
+  border-radius: 8px;
+}
+
+.favorite_svg {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  width: 16px;
+  height: 14px;
+}
+
+.favorite_color_svg {
+  fill: $midnight_100;
+}
+
+.img {
+  width: 100px;
+  height: 100px;
+  margin-top: 12px;
+  order: -1;
+}
+
+.name {
+  @include text-T1-13-medium;
+  align-self: flex-start;
+  width: 120px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  color: $midnight_100;
+}
+
+.price {
+  @include text-T2-12-regular;
+  align-self: flex-start;
+  margin-top: 4px;
+  margin-bottom: 0;
+  color: $midnight_50;
+}
+
+.container {
+  @include flex-row(space-between, center);
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  padding-bottom: 7px;
+}
+
+.basket_container {
+  @include flex-row(center, center);
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-color: $background_state;
+  border-radius: 50%;
+}
+
+.basket {
+  width: 12px;
+  height: 14px;
+}
+
+.count_actions {
+  @include flex-row(flex-end, center);
+  color: $midnight_100;
+}
+
+.increase_count {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-color: $yellow_100;
+  border-radius: 50%;
+
+  &::before {
+    @include pseudo;
+    top: calc(50% - 7px);
+    left: calc(50% - 1px);
+    width: 1px;
+    height: 14px;
+    border: 1px solid $white;
+    border-radius: 3px;
+    background-color: $white;
+  }
+
+  &::after {
+    @include pseudo;
+    top: calc(50% - 1px);
+    left: calc(50% - 6px);
+    width: 13px;
+    height: 1px;
+    border: 1px solid $white;
+    border-radius: 3px;
+    background-color: $white;
+  }
+}
+
+.total_price {
+  @include text-T1-16-bold;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: $midnight_100;
+}
+
+.count {
+  @include text-T1-12-medium;
+  margin-left: 4px;
+  margin-right: 4px;
+  color: $midnight_100;
+}
+
+.link {
+  @include text-T1-14-bold;
+  color: $yellow_100;
+}
+
+.hidden {
+  display: none;
+}
+
+.low_stock_wrapper {
+  @include flex-column(flex-start, flex-end);
+  position: absolute;
+  bottom: 44px;
+  right: 0;
+}
+
+.low_stock_text {
+  @include text-T1-10-bold;
+  color: $error_100;
+}
+
+.low_stock_count_text {
+  @include text-T1-8-medium;
+  color: $midnight_50;
+}
+
+.special_offer {
+  @include text-T1-10-bold;
+  @include flex-row(center, center);
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: $white;
+  background-color: $error_100;
+}
+
+.allergy_free_wrapper {
+  @include text-T1-8-bold;
+  @include flex-row(center, center);
+  position: absolute;
+  top: 7px;
+  left: 43px;
+  color: $success_100;
+}
+
+.allergy_free_svg_wrapper {
+  @include flex-row(center, center);
+  width: 18px;
+  height: 17px;
+  margin-right: 4px;
+  border-radius: 50%;
+  background-color: $success_10;
+}
+
+.allergies_wrapper {
+  @include flex-row(center, center);
+  position: absolute;
+  top: 7px;
+  right: 40px;
+}
+
+.allergies {
+  @include list-reset;
+  @include flex-row(center, flex-start);
+}
+
+.allergies_item {
+  @include flex-row(center, center);
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+  background-color: $midnight_10;
+  border-radius: 50%;
+}
+
+.allergies_item_text {
+  @include text-details-10-semibold;
+  color: $midnight_25;
+}

@@ -1,0 +1,287 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.root {
+  width: 100%;
+  @include flex-column(flex-start, center);
+  position: relative;
+
+  &::before {
+    @include pseudo;
+    top: -20px;
+    width: 100%;
+    min-width: $width;
+    max-width: $max_width;
+    height: 70px;
+    background-color: $yellow_100;
+    border-radius: 0px 0px 8px 8px;
+  }
+}
+
+.wrapper {
+  @include flex-column(flex-start, center);
+  position: relative;
+  min-width: $core_width;
+  width: calc(100% - 48px);
+  max-width: $max_width - ($width - $core_width);
+  min-height: 460px;
+  padding-left: 18px;
+  padding-right: 16px;
+  background-color: $white;
+  border-radius: 8px;
+}
+
+.img_wrapper {
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 36px;
+  margin-left: 5px;
+  order: -1;
+}
+
+.img {
+  width: 243px;
+  height: 190px;
+  touch-action: none;
+}
+
+.img_pagination {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: $midnight_25;
+}
+
+.img_pagination_active {
+  width: 17px;
+  height: 6px;
+  border-radius: 20px;
+  background-color: $midnight_100;
+}
+
+.img_pagination_wrapper {
+  @include list-reset;
+  @include flex-row(center, center);
+  position: absolute;
+  min-width: 36px;
+  bottom: -15px;
+  left: calc(50% - 18px);
+
+  li {
+    margin-right: 4px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.caption {
+  @include text-T1-16-medium;
+  align-self: flex-start;
+  width: 254px;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: $midnight_100;
+}
+
+.price {
+  @include text-T1-16-medium;
+  margin-top: 13px;
+  margin-bottom: 0;
+  align-self: flex-start;
+  color: $midnight_50;
+}
+
+.container {
+  @include flex-row(space-between, center);
+  position: relative;
+  width: 100%;
+  padding-bottom: 7px;
+
+  &::after {
+    @include pseudo;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $midnight_10;
+  }
+}
+
+.total_price {
+  @include title-h1;
+  margin-top: 7px;
+  margin-bottom: 0;
+}
+
+.count_actions {
+  @include flex-row(flex-end, center);
+  color: $midnight_100;
+}
+
+.count {
+  @include text-T1-16-medium;
+  margin-left: 12px;
+  margin-right: 12px;
+  color: $midnight_100;
+}
+
+.basket_container {
+  @include flex-row(center, center);
+  position: relative;
+  width: 38px;
+  height: 38px;
+  background-color: $background_state;
+  border-radius: 50%;
+}
+
+.basket {
+  width: 12px;
+  height: 14px;
+  z-index: 2;
+}
+
+.increase_count {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  background-color: $yellow_100;
+  border-radius: 50%;
+
+  &::before {
+    @include pseudo;
+    top: calc(50% - 10px);
+    left: calc(50% - 2px);
+    width: 1px;
+    height: 18px;
+    border: 2px solid $white;
+    border-radius: 3px;
+    background-color: $white;
+  }
+
+  &::after {
+    @include pseudo;
+    top: calc(50% - 3px);
+    left: calc(50% - 9px);
+    width: 18px;
+    height: 1px;
+    border: 2px solid $white;
+    border-radius: 3px;
+    background-color: $white;
+  }
+}
+
+.link_list {
+  @include list-reset;
+  @include flex-row(space-between, center);
+  width: 100%;
+  margin-top: 16px;
+}
+
+.link {
+  @include text-T1-14-bold;
+  color: $yellow_100;
+}
+
+.anchor {
+  width: 100%;
+  height: 800px;
+  @include flex-column(center, center);
+}
+
+.favorite_svg {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  width: 20px;
+  height: 19px;
+}
+
+.favorite_color_svg {
+  fill: $midnight_100;
+}
+
+.allergies_wrapper {
+  @include flex-row(center, center);
+  position: absolute;
+  top: 12px;
+  left: 115px;
+}
+
+.allergies {
+  @include list-reset;
+  @include flex-row(center, flex-start);
+}
+
+.allergies_item {
+  @include flex-row(center, center);
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+  background-color: $midnight_10;
+  border-radius: 50%;
+}
+
+.allergies_item_text {
+  @include text-details-10-semibold;
+  color: $midnight_25;
+}
+
+.special_offer {
+  @include text-T1-12-bold;
+  @include flex-row(center, center);
+  position: absolute;
+  top: 13px;
+  left: 16px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  color: $white;
+  background-color: $error_100;
+}
+
+.allergy_free_wrapper {
+  @include text-T1-12-bold;
+  @include flex-row(center, center);
+  position: absolute;
+  top: 16px;
+  left: 105px;
+  color: $success_100;
+}
+
+.allergy_free_svg_wrapper {
+  @include flex-row(center, center);
+  width: 26px;
+  height: 26px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background-color: $success_10;
+}
+
+.allergy_free_svg {
+  width: 9px;
+  height: 6px;
+}
+
+.low_stock_wrapper {
+  @include flex-column(flex-start, flex-end);
+  position: absolute;
+  bottom: 55px;
+  right: 0;
+}
+
+.low_stock_text {
+  @include text-T1-12-bold;
+  color: $error_100;
+  margin-bottom: 5px;
+}
+
+.low_stock_count_text {
+  @include text-T1-12-medium;
+  color: $midnight_50;
+}
+
+.hidden {
+  display: none;
+}

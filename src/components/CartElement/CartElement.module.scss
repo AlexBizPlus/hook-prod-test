@@ -1,0 +1,272 @@
+@import "../../scss/variables";
+@import "../../scss/mixins";
+
+.root {
+  width: 100%;
+  @include flex-column(flex-start, center);
+  position: relative;
+
+  &::before {
+    @include pseudo;
+    top: -20px;
+    width: 100%;
+    min-width: $width;
+    max-width: $max_width;
+    height: 70px;
+    background-color: $yellow_100;
+    border-radius: 0px 0px 8px 8px;
+  }
+}
+
+.wrapper {
+  @include flex-column(flex-start, center);
+  position: relative;
+  min-width: $core_width;
+  width: calc(100% - 48px);
+  max-width: $max_width - ($width - $core_width);
+  min-height: 160px;
+  padding-left: 18px;
+  padding-right: 16px;
+  background-color: $white;
+  border-radius: 8px;
+}
+
+.small_wrapper {
+  @include flex-column(flex-start, center);
+  position: relative;
+  min-width: $core_width;
+  width: calc(100% - 48px);
+  max-width: $max_width - ($width - $core_width);
+}
+
+.caption_wrapper {
+  @include flex-row(space-between, center);
+  width: 100%;
+  margin-top: 18px;
+}
+
+.caption {
+  @include text-T1-14-bold;
+  color: $midnight_100;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.select {
+  @include text-T1-14-medium;
+  width: 100%;
+  height: 48px;
+  padding-left: 12px;
+  padding-bottom: 24px;
+  border: 1px solid $midnight_10;
+  border-radius: 8px;
+  color: $midnight_100;
+  appearance: none;
+  background-color: transparent;
+
+  &:active,
+  &:focus {
+    border-color: $yellow_100;
+    outline: none;
+  }
+}
+
+.form {
+  width: 100%;
+  margin-top: 19px;
+  z-index: 3;
+}
+
+.select_label {
+  position: relative;
+  background-color: transparent;
+
+  &::after {
+    @include pseudo;
+    top: 17px;
+    right: 10px;
+    width: 8px;
+    height: 14px;
+    background-image: url("../../img/select-arrow.svg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    z-index: -1;
+  }
+}
+
+.select_hint {
+  @include text-T1-12-medium;
+  position: absolute;
+  bottom: -20px;
+  left: 12px;
+  color: $midnight_25;
+  z-index: -1;
+}
+
+.basket {
+  width: 14px;
+  height: 19px;
+}
+
+.input_wrapper {
+  @include flex-row(space-between, flex-start);
+  max-width: $width;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input {
+  @include text-T1-14-medium;
+  width: 88px;
+  height: 48px;
+  padding-left: 11px;
+  padding-top: 16px;
+  border: 1px solid $midnight_10;
+  border-radius: 8px;
+  color: $midnight_100;
+  background-color: transparent;
+
+  &:active,
+  &:focus {
+    padding-top: 22px;
+    border-color: $yellow_100;
+    outline: none;
+  }
+
+  &:active::-webkit-input-placeholder,
+  &:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+}
+
+.input_label {
+  position: relative;
+  background-color: transparent;
+
+  &:active .input_hint,
+  &:focus .input_hint,
+  &:focus-within .input_hint {
+    @include text-T1-12-medium;
+    position: absolute;
+    display: block;
+    top: 3px;
+    left: 11px;
+    color: $midnight_25;
+  }
+}
+
+.input_hint {
+  display: none;
+}
+
+.cart_products {
+  @include list-reset;
+  @include flex-column(flex-start, center);
+  margin-top: 12px;
+
+  li {
+    width: 100%;
+  }
+}
+
+.input_promo_label {
+  @include flex-row(flex-start, center);
+  position: relative;
+  width: 100%;
+  height: 48px;
+  margin-top: 10px;
+  background-color: $white;
+  border-radius: 8px;
+}
+
+.input_promo {
+  @include text-T1-16-medium;
+  text-transform: uppercase;
+  width: 100%;
+  height: 48px;
+  padding-left: 18px;
+  border-radius: 8px;
+  color: $midnight_100;
+  border: none;
+  outline: none;
+
+  &:active,
+  &:focus,
+  &:focus-within {
+    border: 1px solid $yellow_100;
+    outline: none;
+  }
+}
+
+.input_promo:valid + div::before {
+  @include pseudo;
+  top: 10px;
+  right: 9px;
+  width: 28px;
+  height: 28px;
+  background-image: url("../../img/promo-ok.svg");
+  background-repeat: no-repeat;
+  background-size: 14px auto;
+  background-position: center;
+  background-color: $success_100;
+  border-radius: 50%;
+}
+
+.total_table_wrapper {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 140px;
+  padding-left: 18px;
+  padding-right: 11px;
+  border-radius: 8px;
+  background-color: $white;
+}
+
+.total_table {
+  width: 100%;
+
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.total_table_key,
+.total_table_value {
+  @include text-T1-16-medium;
+  color: $midnight_100;
+}
+
+.total_table_key {
+  text-align: start;
+}
+
+.total_table_value {
+  text-align: end;
+}
+
+.total_table_row_sum {
+  border-spacing: 0 24px;
+}
+
+.total_row {
+  @include flex-row(space-between, flex-start);
+  position: relative;
+  width: 100%;
+  margin-bottom: 4px;
+  padding-top: 24px;
+
+  &::before {
+    @include pseudo;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $shadow;
+  }
+}
+
+.total_key,
+.total_value {
+  @include title-h2;
+  color: $midnight_100;
+}
