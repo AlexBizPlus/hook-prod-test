@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { connect, useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import cn from "classnames";
 import s from "./ProductItem.module.scss";
 import {
@@ -38,7 +38,7 @@ const ProductItem = ({ product }) => {
   useEffect(() => {
     dispatch(setProduct(product));
     dispatch(setCart(Cart));
-  }, []);
+  }, [dispatch, product]);
 
   useEffect(() => {
     for (let i = 0; i < cartProducts.length; i++) {
@@ -60,7 +60,7 @@ const ProductItem = ({ product }) => {
       setCountText(count);
       setTotalPrice(totalPricePattern);
     }
-  }, [count]);
+  }, [count, totalPricePattern, totalPriceSinglePattern]);
 
   useEffect(() => {
     if (imgNumber === 0) {
@@ -267,23 +267,4 @@ const ProductItem = ({ product }) => {
   );
 };
 
-const mapStateToProps = ({ PRODUCT, CART }) => {
-  return {
-    storedProduct: PRODUCT.storedProduct,
-    cart: CART.cart,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setProduct: (product) => dispatch(setProduct(product)),
-    setFavoriteProduct: (is_favorite) =>
-      dispatch(setFavoriteProduct(is_favorite)),
-    setCart: (cart) => dispatch(setCart(cart)),
-    setReduceCountCart: (id) => dispatch(setReduceCountCart(id)),
-    setIncreaseCountCart: (id, price) =>
-      dispatch(setIncreaseCountCart(id, price)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProductItem);
+export default ProductItem;

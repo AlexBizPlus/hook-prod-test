@@ -1,5 +1,5 @@
 import React from "react";
-import { connect, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Routes } from "../../const";
 import cn from "classnames";
@@ -33,10 +33,4 @@ const Footer = () => {
   );
 };
 
-const mapStateToProps = ({ CART }) => {
-  return {
-    total: CART.total,
-  };
-};
-
-export default connect(mapStateToProps, null)(Footer);
+export default Footer;

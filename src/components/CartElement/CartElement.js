@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { connect, useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import cn from "classnames";
 import s from "./CartElement.module.scss";
 import {
@@ -27,17 +27,17 @@ const CartElement = () => {
   useEffect(() => {
     dispatch(setCartProducts(addCartProducts(cartProductsShort)));
     dispatch(setCartOrder(addCartOrder(cartProductsShort)));
-  }, [cartProductsShort]);
+  }, [cartProductsShort, dispatch]);
 
   useEffect(() => {
     dispatch(setCartTotal());
-  }, [cartOrder, cartDelivery, cartPromocode]);
+  }, [cartOrder, cartDelivery, cartPromocode, dispatch]);
 
   useEffect(() => {
     if (selectAddressRef.current.value) {
       setCityName(findCity(selectAddressRef.current.value));
     }
-  }, [selectAddressRef.current]);
+  }, []);
 
   const findCity = (address) => {
     for (let i = 0; i < Addresses.length; i++) {
@@ -190,22 +190,4 @@ const CartElement = () => {
   );
 };
 
-const mapStateToProps = ({ CART }) => {
-  return {
-    cart: CART.cart,
-    order: CART.order,
-    delivery: CART.delivery,
-    promocode: CART.promocode,
-    total: CART.total,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setCartProducts: (products) => dispatch(setCartProducts(products)),
-    setCartOrder: (products) => dispatch(setCartOrder(products)),
-    setCartTotal: () => dispatch(setCartTotal()),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(CartElement);
+export default CartElement;

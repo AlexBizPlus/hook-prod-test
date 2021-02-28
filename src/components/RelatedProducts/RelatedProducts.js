@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { connect, useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import cn from "classnames";
 import s from "./RelatedProducts.module.scss";
 import { setRelatedProducts } from "../../store/actions/related-actions";
@@ -17,7 +17,7 @@ const RelatedProducts = ({ idList }) => {
 
   useEffect(() => {
     dispatch(setRelatedProducts(findProduct(idList)));
-  }, []);
+  }, [dispatch, idList]);
 
   useEffect(() => {
     setListStyle(getComputedStyle(productListRef.current));
@@ -27,7 +27,7 @@ const RelatedProducts = ({ idList }) => {
         parseInt(listStyle.width, 10) - parseInt(sliderStyle.width, 10)
       );
     }
-  }, [productListRef.current, productListWrapperRef.current, length]);
+  }, [length, listStyle, sliderStyle]);
 
   const findProduct = (idList) => {
     return Products.filter((product) => idList.includes(product.id));
@@ -96,16 +96,4 @@ const RelatedProducts = ({ idList }) => {
   );
 };
 
-const mapStateToProps = ({ RELATED }) => {
-  return {
-    relatedProducts: RELATED.relatedProducts,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setRelatedProducts: (value) => dispatch(setRelatedProducts(value)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(RelatedProducts);
+export default RelatedProducts;

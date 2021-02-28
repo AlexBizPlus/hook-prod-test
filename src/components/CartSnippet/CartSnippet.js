@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { connect, useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import cn from "classnames";
 import s from "./CartSnippet.module.scss";
 import {
@@ -8,7 +8,6 @@ import {
   setCartOrder,
 } from "../../store/actions/cart-actions";
 import { addCartOrder } from "../../utils";
-import { setFavoriteRelated } from "../../store/actions/related-actions";
 import { ReactComponent as BasketSvg } from "../../img/basket.svg";
 
 const CartSnippet = ({ product }) => {
@@ -44,7 +43,13 @@ const CartSnippet = ({ product }) => {
       setTotalPrice(totalPricePattern);
     }
     dispatch(setCartOrder(addCartOrder(cartProducts)));
-  }, [count]);
+  }, [
+    cartProducts,
+    count,
+    dispatch,
+    totalPricePattern,
+    totalPriceSinglePattern,
+  ]);
 
   const cartProductSpecials = () => {
     switch (true) {
@@ -111,20 +116,4 @@ const CartSnippet = ({ product }) => {
   );
 };
 
-const mapStateToProps = ({ CART }) => {
-  return {
-    cart: CART.cart,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setFavoriteRelated: (id, value) => dispatch(setFavoriteRelated(id, value)),
-    setReduceCountCart: (id) => dispatch(setReduceCountCart(id)),
-    setIncreaseCountCart: (id, price) =>
-      dispatch(setIncreaseCountCart(id, price)),
-    setCartOrder: (products) => dispatch(setCartOrder(products)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(CartSnippet);
+export default CartSnippet;

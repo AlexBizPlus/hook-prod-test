@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { connect, useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import cn from "classnames";
 import s from "./Snippet.module.scss";
 import {
@@ -46,7 +46,7 @@ const Snippet = ({ product }) => {
       setCountText(count);
       setTotalPrice(totalPricePattern);
     }
-  }, [count]);
+  }, [count, totalPricePattern, totalPriceSinglePattern]);
 
   const handleFavoriteClick = () => {
     const favoriteValue = !product.is_favorite;
@@ -163,19 +163,4 @@ const Snippet = ({ product }) => {
   );
 };
 
-const mapStateToProps = ({ PRODUCT, CART }) => {
-  return {
-    cart: CART.cart,
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setFavoriteRelated: (id, value) => dispatch(setFavoriteRelated(id, value)),
-    setReduceCountCart: (id) => dispatch(setReduceCountCart(id)),
-    setIncreaseCountCart: (id, price) =>
-      dispatch(setIncreaseCountCart(id, price)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Snippet);
+export default Snippet;
